@@ -1,0 +1,45 @@
+.ham-menu {
+  display: block;
+
+  @include medium {
+    display: none;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    width: 3.2rem;
+    cursor: pointer;
+  }
+
+  &__bar {
+    position: relative;
+    width: 50px;
+    height: 3px;
+    background-color: $fc-white;
+    border-radius: 1em;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background-color: $fc-white;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background-color: $fc-white;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.nav {
+  display: none;
+
+  @include medium {
+    display: block;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    border-radius: 1rem;
+
+    &--active {
+      background-color: $accent-black;
+    }
+  }
+}

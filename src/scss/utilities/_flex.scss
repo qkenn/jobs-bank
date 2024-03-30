@@ -1,0 +1,27 @@
+.flex {
+  display: flex;
+
+  &--logo {
+    gap: 1rem;
+
+    img {
+      filter: invert(95%) sepia(0%) saturate(7498%) hue-rotate(139deg)
+        brightness(108%) contrast(100%);
+    }
+  }
+
+  &--navbar {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &--nav {
+    gap: 5rem;
+    align-items: center;
+  }
+
+  &--hero {
+    align-items: center;
+    justify-content: center;
+  }
+}
