@@ -1,0 +1,12 @@
+.grid {
+  display: grid;
+
+  &--intro-cards {
+    grid-template-columns: 1fr;
+    gap: 6rem;
+
+    @include medium {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
