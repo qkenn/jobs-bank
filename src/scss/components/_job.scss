@@ -1,0 +1,30 @@
+.job {
+  padding: 3rem;
+  background-color: $lighter-blue;
+  border-radius: 1rem;
+
+  &__hide-btn {
+    display: inline-block;
+    margin-left: 0.5em;
+    color: $accent-blue;
+    cursor: pointer;
+  }
+
+  &__type {
+    color: $light-gray;
+  }
+
+  &__title {
+    font-size: 2rem;
+    margin-top: 0.5em;
+  }
+
+  &__description {
+    margin: 2em 0;
+  }
+
+  &__salary {
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid $light-gray;
+  }
+}

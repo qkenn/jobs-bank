@@ -24,4 +24,10 @@
     align-items: center;
     justify-content: center;
   }
+
+  &--job {
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+  }
 }

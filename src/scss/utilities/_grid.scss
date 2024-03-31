@@ -8,5 +8,22 @@
     @include medium {
       grid-template-columns: 1fr 1fr;
     }
+
+    @include large {
+      gap: 8rem;
+    }
+  }
+
+  &--job-listings {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+
+    @include medium {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include large {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 }
