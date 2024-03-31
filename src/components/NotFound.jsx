@@ -5,11 +5,13 @@ export default function NotFound() {
     <>
       <section className="section">
         <div className="error">
-          <h1 className="error__title">404 Not Found</h1>
-          <p className="error__description">this page does not exists</p>
-          <Link to="/" className="btn">
-            Go back
-          </Link>
+          <div className="wrapper">
+            <h1 className="error__title">404 Not Found</h1>
+            <p className="error__description">this page does not exists</p>
+            <Link to="/" className="btn">
+              Go back
+            </Link>
+          </div>
         </div>
       </section>
     </>
