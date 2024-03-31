@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function JobListing({ job }) {
@@ -26,9 +27,9 @@ export default function JobListing({ job }) {
         </div>
         <div className="flex flex--job">
           <div className="job__location">{job.location}</div>
-          <a href={`/job/${job.id}`} className="btn">
+          <Link to={`/job/${job.id}`} className="btn">
             Read More
-          </a>
+          </Link>
         </div>
       </div>
     </>

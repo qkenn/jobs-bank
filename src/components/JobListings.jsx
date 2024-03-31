@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
 import jobs from "../jobs.json";
 import JobListing from "./JobListing";
 
-export default function JobListings() {
-  const fewJobs = jobs.slice(0, 3);
+export default function JobListings({ isHome }) {
+  let previewJobs;
+  isHome ? (previewJobs = jobs.slice(0, 3)) : (previewJobs = jobs);
+
   return (
     <>
       <section className="section">
@@ -10,15 +13,15 @@ export default function JobListings() {
           <h2 className="headline">Browse Jobs</h2>
 
           <div className="grid grid--job-listings">
-            {fewJobs.map((job) => {
+            {previewJobs.map((job) => {
               return <JobListing job={job} key={job.id} />;
             })}
           </div>
 
           <div className="btn-wrap">
-            <a href="/jobs" className="btn btn--jobs">
+            <Link to="/jobs" className="btn btn--jobs">
               All Jobs
-            </a>
+            </Link>
           </div>
         </div>
       </section>

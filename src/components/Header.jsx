@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logoIcon from "../assets/bxs-briefcase.svg";
 
 export default function Header() {
@@ -6,27 +7,27 @@ export default function Header() {
       <header className="header">
         <div className="wrapper">
           <div className="flex flex--navbar">
-            <div className="flex flex--logo">
+            <Link to="/" className="flex flex--logo">
               <img src={logoIcon} alt="logo-icon" />
               <h3>Jobs</h3>
-            </div>
+            </Link>
 
             <nav className="nav nav--primary">
               <ul className="flex flex--nav">
                 <li>
-                  <a href="#" className="nav__link nav__link--active">
+                  <Link to="/" className="nav__link nav__link--active">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="nav__link">
+                  <Link to="/jobs" className="nav__link">
                     Jobs
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="nav__link">
+                  <Link to="/add-job" className="nav__link">
                     Add Job
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

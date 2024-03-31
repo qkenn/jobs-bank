@@ -8,6 +8,10 @@
       filter: invert(95%) sepia(0%) saturate(7498%) hue-rotate(139deg)
         brightness(108%) contrast(100%);
     }
+
+    text-decoration: none;
+    color: inherit;
+    align-items: center;
   }
 
   &--navbar {

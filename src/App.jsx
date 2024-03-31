@@ -5,17 +5,15 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-// import Header from "./components/Header";
-// import Hero from "./components/Hero";
-// import HomeCards from "./components/HomeCards";
-// import JobListings from "./components/JobListings";
 import HomePage from "./pages/HomePage";
+import JobsPage from "./pages/JobsPage";
 import MainLayout from "./layouts/MainLayout";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
       <Route path="/" element={<HomePage />} />
+      <Route path="/jobs" element={<JobsPage />} />
     </Route>
   )
 );

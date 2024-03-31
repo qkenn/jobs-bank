@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import IntroCard from "./IntroCard";
 
 export default function HomeCards() {
@@ -11,9 +12,9 @@ export default function HomeCards() {
               <p className="intro-card__description">
                 Browse our React jobs and start your career tody.
               </p>
-              <a href="#" className="btn">
+              <Link to="/jobs" className="btn">
                 Browse Jobs
-              </a>
+              </Link>
             </IntroCard>
 
             <IntroCard bg="blue">
@@ -21,9 +22,9 @@ export default function HomeCards() {
               <p className="intro-card__description">
                 List your job to find the perfect developer for the role.
               </p>
-              <a href="#" className="btn">
+              <Link to="/add-job" className="btn">
                 Add Job
-              </a>
+              </Link>
             </IntroCard>
           </div>
         </div>
