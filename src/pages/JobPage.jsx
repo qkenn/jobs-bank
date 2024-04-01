@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 
 export default function JobPage() {
   const job = useLoaderData();
@@ -7,54 +7,68 @@ export default function JobPage() {
     <>
       <section className="section section--job">
         <div className="wrapper">
+          <Link to="/jobs" className="jobcard__backlink">
+            Back to Job Listings
+          </Link>
           <div className="grid grid--job">
-            <div className="job__card">
-              <div className="job__type">Full-Time</div>
-              <h2 className="title title--primary">Senior React Developer</h2>
-              <div className="job__location">Boston, MA</div>
+            <div className="jobcard__wrapper jobcard__wrapper--large">
+              <div className="jobcard jobcard--intro">
+                <div className="jobcard__type">{job.type}</div>
+                <h2 className="title title--role">{job.title}</h2>
+                <div className="jobcard__location">{job.location}</div>
+              </div>
+
+              <div className="jobcard jobcard--info">
+                <h4 className="title title--medium">Job Description</h4>
+                <p>{job.description}</p>
+
+                <h4 className="title title--salary title--medium">Salary</h4>
+                <p>
+                  <span className="jobcard__salary">{job.salary}</span> / Year
+                </p>
+              </div>
             </div>
 
-            <div className="job__card">
-              <h4 className="title title--secondary">Job Description</h4>
-              <p>
-                We are seeking a talented Front-End Developer to join our team
-                in Boston, MA. The ideal candidate will have strong skills in
-                HTML, CSS, and JavaScript, with experience working with modern
-                JavaScript frameworks such as React or Angular.
-              </p>
+            <div className="jobcard__wrapper jobcard__wrapper--small">
+              <div className="jobcard jobcard--company">
+                <h4 className="title title--medium mb-2">Company Info</h4>
+                <h3 className="title title--company-name">
+                  {job.company.name}
+                </h3>
+                <p className="jobcard__description">
+                  {job.company.description}
+                </p>
 
-              <h4 className="title title--secondary">Salary</h4>
-              <p>
-                <span>$70K - $80K</span> / Year
-              </p>
-            </div>
+                <h4 className="title title--medium mt-2">Email</h4>
+                <div className="jobcard__contact">
+                  {job.company.contactEmail}
+                </div>
 
-            <div className="job__card">
-              <h4 className="title title--secondary">Company Info</h4>
-              <h3 className="title title--primary">Senior React Developer</h3>
-              <p>
-                NewTek Solutions is a leading technology company specializing in
-                web development and digital solutions. We pride ourselves on
-                delivering high-quality products and services to our clients
-                while fostering a collaborative and innovative work environment.
-              </p>
+                <h4 className="title title--medium mt-1">Phone</h4>
+                <div className="jobcard__contact">
+                  {job.company.contactPhone}
+                </div>
+              </div>
 
-              <h4 className="title title--secondary">Company Info</h4>
-              <div className="job__contact">contact@teksolutions.com</div>
+              <div className="jobcard jobcard--manage">
+                <h4 className="title title--medium mb-2">Manage Jobs</h4>
 
-              <h4 className="title title--secondary">Company Info</h4>
-              <div className="job__contact">contact@teksolutions.com</div>
-            </div>
-
-            <div className="job__card">
-              <h4 className="title title--secondary">Manage Jobs</h4>
-
-              <a href="#" className="job__btn">
-                Edit job
-              </a>
-              <a href="#" className="job__btn">
-                Delete job
-              </a>
+                <div className="flex flex--jobcard">
+                  <div className="jobcard__btn-wrap">
+                    <Link
+                      to={`/jobs/edit/${job.id}`}
+                      className="jobcard__btn jobcard__btn--blue"
+                    >
+                      Edit Job
+                    </Link>
+                  </div>
+                  <div className="jobcard__btn-wrap">
+                    <a href="#" className="jobcard__btn jobcard__btn--red">
+                      Delete Job
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

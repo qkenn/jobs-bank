@@ -27,7 +27,7 @@ export default function JobHomeCards({ isHome }) {
     <>
       <section className="section">
         <div className="wrapper">
-          <h2 className="headline">Browse Jobs</h2>
+          <h2 className="title title--headline">Browse Jobs</h2>
 
           <div className="grid grid--job-listings">
             {isLoading ? (

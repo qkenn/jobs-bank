@@ -34,4 +34,9 @@
     justify-content: space-between;
     margin-top: 2.5rem;
   }
+
+  &--jobcard {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }

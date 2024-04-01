@@ -1,0 +1,65 @@
+.jobcard {
+  background: $fc-white;
+  border-radius: 1rem;
+  padding: 3rem;
+
+  &__type {
+    color: rgb(70, 70, 70);
+  }
+
+  &__location {
+    font-weight: 500;
+    color: $accent-blue;
+  }
+
+  &__description {
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgb(214, 214, 214);
+  }
+
+  &__contact {
+    margin: 0.5em 0;
+  }
+
+  &__btn {
+    display: inline-block;
+    text-decoration: none;
+    color: $fc-white;
+    text-align: center;
+    padding: 0.5em 1.5em;
+    min-width: 10rem;
+    border-radius: 2rem;
+    font-weight: 500;
+
+    &--blue {
+      background-color: $accent-blue;
+    }
+
+    &--red {
+      background-color: red;
+    }
+  }
+
+  &__btn-wrap {
+    text-align: center;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    &--large {
+      @include medium {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  &__backlink {
+    display: inline-block;
+    padding: 2rem 3rem;
+    color: $accent-blue;
+    font-weight: 500;
+  }
+}

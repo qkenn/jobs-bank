@@ -11,11 +11,10 @@
 @import "./components/hero";
 @import "./components/intro-card";
 @import "./components/btn";
-@import "./components/headline";
-@import "./components/job-card";
+@import "./components/job-homecard";
 @import "./components/footer";
 @import "./components/error";
-@import "./components/job";
+@import "./components/jobcard";
 @import "./components/title";
 
 // utilities
@@ -23,3 +22,4 @@
 @import "./utilities/wrapper";
 @import "./utilities/grid";
 @import "./utilities/section";
+@import "./utilities/utils";

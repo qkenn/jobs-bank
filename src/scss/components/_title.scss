@@ -1,3 +1,32 @@
 .title {
   font-weight: 700;
+
+  &--role {
+    font-size: 3rem;
+    margin: 0.6em 0;
+
+    @include medium {
+      font-size: 3.5rem;
+    }
+  }
+
+  &--company-name {
+    font-size: 2.5rem;
+  }
+
+  &--medium {
+    font-size: 2rem;
+    color: $accent-blue;
+  }
+
+  &--salary {
+    margin-top: 2em;
+  }
+
+  &--headline {
+    font-size: 3.5rem;
+    text-align: center;
+    color: $accent-blue;
+    margin: 0 0 2em 0;
+  }
 }

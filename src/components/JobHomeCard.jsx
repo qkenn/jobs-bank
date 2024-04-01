@@ -13,20 +13,24 @@ export default function JobHomeCard({ job }) {
 
   return (
     <>
-      <div className="job-card">
-        <div className="job-card__type">{job.type}</div>
-        <h4 className="job-card__title">{job.title}</h4>
-        <p className="job-card__description">
+      <div className="job-homecard">
+        <div className="job-homecard__type">{job.type}</div>
+        <h4 className="job-homecard__title">{job.title}</h4>
+        <p className="job-homecard__description">
           {description}
-          <span className="job-card__hide-btn" onClick={() => handleShowMore()}>
+          <span
+            className="job-homecard__hide-btn"
+            onClick={() => handleShowMore()}
+          >
             {`show ${showMore ? "less" : "more"}`}
           </span>
         </p>
-        <div className="job-card__salary">
-          <span className="job-card__salary-amount">{job.salary}</span> / year
+        <div className="job-homecard__salary">
+          <span className="job-homecard__salary-amount">{job.salary}</span> /
+          year
         </div>
         <div className="flex flex--job">
-          <div className="job-card__location">{job.location}</div>
+          <div className="job-homecard__location">{job.location}</div>
           <Link to={`/jobs/${job.id}`} className="btn">
             Read More
           </Link>
