@@ -1,9 +1,9 @@
-import JobListings from "../components/JobListings";
+import JobHomeCards from "../components/JobHomeCards";
 
 export default function JobsPage() {
   return (
     <>
-      <JobListings isHome={false} />
+      <JobHomeCards isHome={false} />
     </>
   );
 }

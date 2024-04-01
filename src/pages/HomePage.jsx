@@ -1,13 +1,13 @@
 import Hero from "../components/Hero";
 import HomeCards from "../components/HomeCards";
-import JobListings from "../components/JobListings";
+import JobHomeCards from "../components/JobHomeCards";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
       <HomeCards />
-      <JobListings isHome={true} />
+      <JobHomeCards isHome={true} />
     </>
   );
 }

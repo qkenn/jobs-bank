@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function JobListing({ job }) {
+export default function JobHomeCard({ job }) {
   const [showMore, setShowMore] = useState(false);
 
   let description = job.description;

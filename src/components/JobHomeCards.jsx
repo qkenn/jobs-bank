@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import JobListing from "./JobListing";
+import JobHomeCard from "./JobHomeCard";
 
-export default function JobListings({ isHome }) {
+export default function JobHomeCards({ isHome }) {
   const [jobs, setJobs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -34,16 +34,18 @@ export default function JobListings({ isHome }) {
               <h2>It&apos;s still loading</h2>
             ) : (
               jobs.map((job) => {
-                return <JobListing job={job} key={job.id} />;
+                return <JobHomeCard job={job} key={job.id} />;
               })
             )}
           </div>
 
-          <div className="btn-wrap">
-            <Link to="/jobs" className="btn btn--jobs">
-              All Jobs
-            </Link>
-          </div>
+          {isHome && (
+            <div className="btn-wrap">
+              <Link to="/jobs" className="btn btn--jobs">
+                All Jobs
+              </Link>
+            </div>
+          )}
         </div>
       </section>
     </>
