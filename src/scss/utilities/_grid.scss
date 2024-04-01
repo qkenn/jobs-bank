@@ -28,6 +28,7 @@
   }
 
   &--job {
-    grid-template-columns: repeat(1fr, 4);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
   }
 }

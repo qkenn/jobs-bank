@@ -4,4 +4,10 @@
   @include medium {
     margin: 15rem 0;
   }
+
+  &--job {
+    margin: 0;
+    padding: 15rem 0;
+    background-color: rgba(197, 224, 255, 0.226);
+  }
 }
