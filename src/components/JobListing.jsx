@@ -13,21 +13,21 @@ export default function JobListing({ job }) {
 
   return (
     <>
-      <div className="job">
-        <div className="job__type">{job.type}</div>
-        <h4 className="job__title">{job.title}</h4>
-        <p className="job__description">
+      <div className="job-card">
+        <div className="job-card__type">{job.type}</div>
+        <h4 className="job-card__title">{job.title}</h4>
+        <p className="job-card__description">
           {description}
-          <span className="job__hide-btn" onClick={() => handleShowMore()}>
+          <span className="job-card__hide-btn" onClick={() => handleShowMore()}>
             {`show ${showMore ? "less" : "more"}`}
           </span>
         </p>
-        <div className="job__salary">
-          <span className="job__salary-amount">{job.salary}</span> / year
+        <div className="job-card__salary">
+          <span className="job-card__salary-amount">{job.salary}</span> / year
         </div>
         <div className="flex flex--job">
-          <div className="job__location">{job.location}</div>
-          <Link to={`/job/${job.id}`} className="btn">
+          <div className="job-card__location">{job.location}</div>
+          <Link to={`/jobs/${job.id}`} className="btn">
             Read More
           </Link>
         </div>
