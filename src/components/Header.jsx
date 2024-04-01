@@ -1,33 +1,35 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logoIcon from "../assets/bxs-briefcase.svg";
 
 export default function Header() {
+  const navClass = ({ isActive }) =>
+    isActive ? "nav__link nav__link--active" : "nav__link";
   return (
     <>
       <header className="header">
         <div className="wrapper">
           <div className="flex flex--navbar">
-            <Link to="/" className="flex flex--logo">
+            <NavLink to="/" className="flex flex--logo">
               <img src={logoIcon} alt="logo-icon" />
               <h3>Jobs</h3>
-            </Link>
+            </NavLink>
 
             <nav className="nav nav--primary">
               <ul className="flex flex--nav">
                 <li>
-                  <Link to="/" className="nav__link nav__link--active">
+                  <NavLink to="/" className={navClass}>
                     Home
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/jobs" className="nav__link">
+                  <NavLink to="/jobs" className={navClass}>
                     Jobs
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/add-job" className="nav__link">
+                  <NavLink to="/add-job" className={navClass}>
                     Add Job
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </nav>
