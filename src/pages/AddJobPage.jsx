@@ -30,7 +30,6 @@ export default function AddJobPage({ addJobDB }) {
         contactPhone: phone,
       },
     };
-    console.log("handle submit");
 
     addJobDB(newJob);
     navigate("/jobs");

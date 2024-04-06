@@ -111,20 +111,6 @@
         "contactEmail": "",
         "contactPhone": "737890"
       }
-    },
-    {
-      "id": "ec5b",
-      "title": "ddddddddddddddddddddddd",
-      "type": "Full-Time",
-      "description": "ddddddddddddd",
-      "location": "ddd",
-      "salary": "Under $50k",
-      "company": {
-        "name": "eeeeee",
-        "description": "eeeeeeeeeeeddddddd",
-        "contactEmail": "",
-        "contactPhone": "ddddddd"
-      }
     }
   ]
 }

@@ -1,7 +1,19 @@
-import { useLoaderData, Link } from "react-router-dom";
+import { useLoaderData, Link, useNavigate } from "react-router-dom";
 
-export default function JobPage() {
+export default function JobPage({ deleteJob }) {
   const job = useLoaderData();
+
+  const navigate = useNavigate();
+
+  const handleDelete = async (id) => {
+    const confirm = window.confirm("Are you sure ?");
+    if (!confirm) {
+      return;
+    }
+
+    deleteJob(id);
+    navigate("/jobs");
+  };
 
   return (
     <>
@@ -63,9 +75,13 @@ export default function JobPage() {
                     </Link>
                   </div>
                   <div className="jobcard__btn-wrap">
-                    <a href="#" className="jobcard__btn jobcard__btn--red">
+                    <button
+                      href="#"
+                      className="jobcard__btn jobcard__btn--red"
+                      onClick={() => handleDelete(job.id)}
+                    >
                       Delete Job
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
