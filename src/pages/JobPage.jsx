@@ -1,4 +1,5 @@
 import { useLoaderData, Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function JobPage({ deleteJob }) {
   const job = useLoaderData();
@@ -12,6 +13,7 @@ export default function JobPage({ deleteJob }) {
     }
 
     deleteJob(id);
+    toast.success("Deleted successfully");
     navigate("/jobs");
   };
 
@@ -68,7 +70,7 @@ export default function JobPage({ deleteJob }) {
                 <div className="flex flex--jobcard">
                   <div className="jobcard__btn-wrap">
                     <Link
-                      to={`/jobs/edit/${job.id}`}
+                      to={`/edit-job/${job.id}`}
                       className="jobcard__btn jobcard__btn--blue"
                     >
                       Edit Job

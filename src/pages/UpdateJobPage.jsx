@@ -1,24 +1,28 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
-export default function AddJobPage({ addJob }) {
-  const [type, setType] = useState("Full-Time");
-  const [jobName, setJobName] = useState("");
-  const [jobDescription, setJobDescription] = useState("");
-  const [salary, setSalary] = useState("Under $50k");
-  const [location, setLocation] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [companyDescription, setCompanyDescription] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+export default function UpdateJobPage({ updateJob }) {
+  const job = useLoaderData();
+
+  const [type, setType] = useState(job.type);
+  const [jobName, setJobName] = useState(job.title);
+  const [jobDescription, setJobDescription] = useState(job.description);
+  const [salary, setSalary] = useState(job.salary);
+  const [location, setLocation] = useState(job.location);
+  const [companyName, setCompanyName] = useState(job.company.name);
+  const [companyDescription, setCompanyDescription] = useState(
+    job.company.description
+  );
+  const [email, setEmail] = useState(job.company.contactEmail);
+  const [phone, setPhone] = useState(job.company.contactPhone);
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newJob = {
+    const updatedJob = {
       title: jobName,
       type,
       description: jobDescription,
@@ -32,8 +36,8 @@ export default function AddJobPage({ addJob }) {
       },
     };
 
-    addJob(newJob);
-    toast.success("Job Added");
+    updateJob(job.id, updatedJob);
+    toast.success("Job Updated");
     navigate("/jobs");
   };
 
@@ -42,7 +46,7 @@ export default function AddJobPage({ addJob }) {
       <section className="section">
         <div className="wrapper wrapper--form">
           <div className="form">
-            <h2 className="title title--form">Add Job</h2>
+            <h2 className="title title--form">Update Job</h2>
             <form onSubmit={handleSubmit}>
               <div className="mt-3">
                 <label htmlFor="type">Job Type</label>
@@ -130,7 +134,7 @@ export default function AddJobPage({ addJob }) {
                 <label htmlFor="company_email">Email</label>
                 <input
                   type="email"
-                  placeholder="no@mail.com"
+                  placeholder="eg: no@mail.com"
                   name="company_email"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
@@ -149,7 +153,7 @@ export default function AddJobPage({ addJob }) {
               </div>
 
               <button type="submit" className="btn">
-                Add Job
+                Update Job
               </button>
             </form>
           </div>
