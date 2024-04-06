@@ -23,6 +23,7 @@ export default function UpdateJobPage({ updateJob }) {
     e.preventDefault();
 
     const updatedJob = {
+      id: job.id,
       title: jobName,
       type,
       description: jobDescription,
@@ -38,7 +39,7 @@ export default function UpdateJobPage({ updateJob }) {
 
     updateJob(job.id, updatedJob);
     toast.success("Job Updated");
-    navigate("/jobs");
+    navigate(`/jobs/${job.id}`);
   };
 
   return (
