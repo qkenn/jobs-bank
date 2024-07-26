@@ -12,7 +12,8 @@ import MainLayout from "./layouts/MainLayout";
 import NotFoundPage from "./pages/NotFoundPage";
 import AddJobPage from "./pages/AddJobPage";
 import UpdateJobPage from "./pages/UpdateJobPage";
-import { jobLoader, addJob, deleteJob, updateJob } from "./helpers/helpers";
+import jobLoader from "./helpers/loaders";
+import { addJob, deleteJob, updateJob } from "./helpers/server";
 
 function App() {
   const router = createBrowserRouter(

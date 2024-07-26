@@ -4,8 +4,8 @@ import { toast } from "react-toastify";
 
 export default function AddJobPage({ addJob }) {
   const [type, setType] = useState("Full-Time");
-  const [jobName, setJobName] = useState("");
-  const [jobDescription, setJobDescription] = useState("");
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const [salary, setSalary] = useState("Under $50k");
   const [location, setLocation] = useState("");
   const [companyName, setCompanyName] = useState("");
@@ -19,11 +19,11 @@ export default function AddJobPage({ addJob }) {
     e.preventDefault();
 
     const newJob = {
-      title: jobName,
+      title,
       type,
-      description: jobDescription,
-      location: location,
-      salary: salary,
+      description,
+      location,
+      salary,
       company: {
         name: companyName,
         description: companyDescription,
@@ -63,8 +63,8 @@ export default function AddJobPage({ addJob }) {
                   type="text"
                   name="job_name"
                   placeholder="eg: Software Developer"
-                  onChange={(e) => setJobName(e.target.value)}
-                  value={jobName}
+                  onChange={(e) => setTitle(e.target.value)}
+                  value={title}
                 />
               </div>
 
@@ -74,8 +74,8 @@ export default function AddJobPage({ addJob }) {
                   name="job_description"
                   id="job_description"
                   placeholder="Expectations, duties, requirements"
-                  onChange={(e) => setJobDescription(e.target.value)}
-                  value={jobDescription}
+                  onChange={(e) => setDescription(e.target.value)}
+                  value={description}
                 ></textarea>
               </div>
 

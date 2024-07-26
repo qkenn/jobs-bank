@@ -6,8 +6,8 @@ export default function UpdateJobPage({ updateJob }) {
   const job = useLoaderData();
 
   const [type, setType] = useState(job.type);
-  const [jobName, setJobName] = useState(job.title);
-  const [jobDescription, setJobDescription] = useState(job.description);
+  const [title, setTitle] = useState(job.title);
+  const [description, setDescription] = useState(job.description);
   const [salary, setSalary] = useState(job.salary);
   const [location, setLocation] = useState(job.location);
   const [companyName, setCompanyName] = useState(job.company.name);
@@ -24,11 +24,11 @@ export default function UpdateJobPage({ updateJob }) {
 
     const updatedJob = {
       id: job.id,
-      title: jobName,
+      title,
       type,
-      description: jobDescription,
-      location: location,
-      salary: salary,
+      description,
+      location,
+      salary,
       company: {
         name: companyName,
         description: companyDescription,
@@ -68,8 +68,8 @@ export default function UpdateJobPage({ updateJob }) {
                   type="text"
                   name="job_name"
                   placeholder="eg: Software Developer"
-                  onChange={(e) => setJobName(e.target.value)}
-                  value={jobName}
+                  onChange={(e) => setTitle(e.target.value)}
+                  value={title}
                 />
               </div>
 
@@ -79,8 +79,8 @@ export default function UpdateJobPage({ updateJob }) {
                   name="job_description"
                   id="job_description"
                   placeholder="Expectations, duties, requirements"
-                  onChange={(e) => setJobDescription(e.target.value)}
-                  value={jobDescription}
+                  onChange={(e) => setDescription(e.target.value)}
+                  value={description}
                 ></textarea>
               </div>
 
@@ -153,7 +153,7 @@ export default function UpdateJobPage({ updateJob }) {
                 />
               </div>
 
-              <button type="submit" className="btn">
+              <button type="submit" className="btn mt-2">
                 Update Job
               </button>
             </form>
